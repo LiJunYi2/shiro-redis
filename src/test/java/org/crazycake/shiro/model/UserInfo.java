@@ -53,4 +53,15 @@ public class UserInfo implements Serializable {
     public void setRole(Integer role) {
         this.role = role;
     }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", age=" + age +
+                ", city='" + city + '\'' +
+                ", role=" + role +
+                '}';
+    }
 }

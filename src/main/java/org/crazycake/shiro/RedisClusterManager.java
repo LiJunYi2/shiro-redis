@@ -136,7 +136,7 @@ public class RedisClusterManager implements IRedisManager {
                 scanResult = jedis.scan(cursor, params);
                 keys.addAll(scanResult.getResult());
                 cursor = scanResult.getCursorAsBytes();
-            } while (scanResult.getStringCursor().compareTo(ScanParams.SCAN_POINTER_START) > 0);
+            } while (!scanResult.isCompleteIteration());
         } finally {
             jedis.close();
         }
@@ -157,7 +157,7 @@ public class RedisClusterManager implements IRedisManager {
                 scanResult = jedis.scan(cursor, params);
                 dbSize++;
                 cursor = scanResult.getCursorAsBytes();
-            } while (scanResult.getStringCursor().compareTo(ScanParams.SCAN_POINTER_START) > 0);
+            } while (!scanResult.isCompleteIteration());
         } finally {
             jedis.close();
         }
