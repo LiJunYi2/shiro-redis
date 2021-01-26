@@ -150,33 +150,33 @@ public class LettuceRedisManager extends WorkAloneLettuceRedisManager implements
         private LettuceRedisManagerBuilder() {
         }
 
-        public LettuceRedisManagerBuilder host(String host) {
-            this.host = host;
+        public LettuceRedisManagerBuilder host(String s) {
+            this.host = s;
             return this;
         }
 
-        public LettuceRedisManagerBuilder port(int port) {
-            this.port = port;
+        public LettuceRedisManagerBuilder port(int i) {
+            this.port = i;
             return this;
         }
 
-        public LettuceRedisManagerBuilder timeout(int timeout) {
-            this.timeout = timeout;
+        public LettuceRedisManagerBuilder timeout(int i) {
+            this.timeout = i;
             return this;
         }
 
-        public LettuceRedisManagerBuilder password(String password) {
-            this.password = password;
+        public LettuceRedisManagerBuilder password(String s) {
+            this.password = s;
             return this;
         }
 
-        public LettuceRedisManagerBuilder database(int database) {
-            this.database = database;
+        public LettuceRedisManagerBuilder database(int i) {
+            this.database = i;
             return this;
         }
 
-        public LettuceRedisManagerBuilder poolConfig(GenericObjectPoolConfig<StatefulRedisConnection<byte[], byte[]>> poolConfig) {
-            this.poolConfig = poolConfig;
+        public LettuceRedisManagerBuilder poolConfig(GenericObjectPoolConfig<StatefulRedisConnection<byte[], byte[]>> p) {
+            this.poolConfig = p;
             return this;
         }
 
