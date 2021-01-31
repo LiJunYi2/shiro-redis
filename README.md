@@ -12,9 +12,25 @@ Official documentation [is located here](http://alexxiyang.github.io/shiro-redis
 
 ## This is a fork of [alexxiyang/shiro-redis](https://github.com/alexxiyang/shiro-redis) to fix bugs and add some new features.
 ## Update
-- 3.4.0: Add Lettuce redis client support.
+- 3.5.0  Add FstSerialize support.  
     Usage:  
+    
+    ```java
+    @Bean
+    public RedisSessionDAO redisSessionDAO() {
+        RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
+        redisSessionDAO.setRedisManager(redisManager());
+        // custom session key prefix
+        redisSessionDAO.setKeyPrefix(SESSION_KEY_PREFIX);
+        // custom session value serializer, default is jdk serializer.
+        redisSessionDAO.setValueSerializer(new FstSerializer());
+        return redisSessionDAO;
+    }
     ```
+- 3.4.0  Add Lettuce redis client support.  
+    Usage:  
+    
+    ```java
     @Bean
     public IRedisManager redisManager() {
         LettuceRedisManager manager = new LettuceRedisManager("127.0.0.1", 6379);
