@@ -203,8 +203,8 @@ public class RedisSessionDAO extends AbstractSessionDAO {
 			if (this.sessionInMemoryEnabled) {
 				setSessionToThreadLocal(sessionId, session);
 			}
-		} catch (SerializationException e) {
-			logger.error("read session error. sessionId: " + sessionId);
+		} catch (Exception e) {
+			logger.error("read session error. sessionId: " + sessionId, e);
 		}
 		return session;
 	}
