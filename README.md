@@ -12,6 +12,22 @@ Official documentation [is located here](http://alexxiyang.github.io/shiro-redis
 
 ## This is a fork of [alexxiyang/shiro-redis](https://github.com/alexxiyang/shiro-redis) to fix bugs and add some new features.
 ## Update
+- 3.7.0 Update dependencies
+ 
+   1、jedis -> 3.9.0
+ 
+   2、lettuce-core -> 6.1.9.RELEASE
+ 
+   3、shiro-core -> 1.9.1
+ 
+ Maven
+ ```xml
+<dependency>
+    <groupId>io.github.LiJunYi2</groupId>
+    <artifactId>shiro-redis</artifactId>
+    <version>3.7</version>
+</dependency>
+ ```
 - 3.5.0  Add FstSerialize support.  
     Usage:  
     
